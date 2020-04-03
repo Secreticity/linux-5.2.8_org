@@ -23,7 +23,7 @@ static int __init init_mymodule(void)
 	enabled = 1;
 	int i;
 	for (i=0; i<NUMCORE; i++){
-		a_t[i] = 0, a_c[i] = 0;
+/*		a_t[i] = 0, a_c[i] = 0;
 		b_t[i] = 0, b_c[i] = 0;
 	  c_t[i] = 0, c_c[i] = 0;
 		d_t[i] = 0, d_c[i] = 0;
@@ -34,7 +34,7 @@ static int __init init_mymodule(void)
 		i_t[i] = 0, i_c[i] = 0;
 		j_t[i] = 0, j_c[i] = 0;
 		k_t[i] = 0, k_c[i] = 0;
-		l_t[i] = 0, l_c[i] = 0;
+		l_t[i] = 0, l_c[i] = 0;*/
 		m_t[i] = 0, m_c[i] = 0;
 	}
 	printk("=====IO profiling=====\n");
@@ -59,7 +59,7 @@ static int __exit exit_mymodule(void)
 
 	int i;
 	for (i=0; i<NUMCORE; i++){
-		a_time += a_t[i];
+/*		a_time += a_t[i];
 		a_count += a_c[i];
 		b_time += b_t[i];
 		b_count += b_c[i];
@@ -82,7 +82,7 @@ static int __exit exit_mymodule(void)
 		k_time += k_t[i];
 		k_count += k_c[i];
 		l_time += l_t[i];
-		l_count += l_c[i];
+		l_count += l_c[i];*/
 		m_time += m_t[i];
 		m_count += m_c[i];
 	}
@@ -98,7 +98,8 @@ static int __exit exit_mymodule(void)
 	//printk("j_time : %llu, j_count : %llu\n", j_time, j_count);
 	//printk("k_time : %llu, k_count : %llu\n", k_time, k_count);
 	//printk("l_time : %llu, l_count : %llu\n", l_time, l_count);
-	printk("add_pagevec : %llu, m_count : %llu\n", m_time, m_count);
+	printk("add_pagevec:%llu\n",m_time);
+  printk("m_count:%llu\n", m_count);
 	
 	return 0;
 }
